@@ -2,5 +2,6 @@
   "upscale": false,
   "segDevice": "cpu",
   "whisperDevice": "cpu",
-  "maxMaskFramesCPU": 120
+  "maxMaskFramesCPU": 120,
+  "runtime": "cpu"
 }

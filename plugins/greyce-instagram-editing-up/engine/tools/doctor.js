@@ -3,16 +3,16 @@
 const fs = require("fs");
 const path = require("path");
 const { execFileSync } = require("child_process");
-const { ENGINE, loadConfig, pythonEnv, chromePath } = require("../lib/common");
+const { ENGINE, RUNTIME, loadConfig, pythonEnv, chromePath } = require("../lib/common");
 
 const ok = (m) => console.log("  ✓ " + m), bad = (m) => (console.log("  ✗ " + m), (process.exitCode = 1));
 const run = (c, a, env) => execFileSync(c, a, { env: { ...process.env, ...env } }).toString().trim();
-console.log("Motor em", ENGINE);
+console.log("Motor em", ENGINE); console.log("Ambiente em", RUNTIME);
 try { ok("node " + process.version); } catch { bad("node"); }
 try { ok(run("ffmpeg", ["-version"]).split("\n")[0]); } catch { bad("ffmpeg não encontrado no PATH"); }
 try { run("ffmpeg", ["-hide_banner", "-filters"]).includes("zscale") ? ok("ffmpeg com zscale (HDR do iPhone → SDR)") : bad("ffmpeg sem zscale: vídeo HDR do iPhone pode sair lavado (use um build completo do ffmpeg)"); } catch {}
 try { ok("Chrome: " + chromePath()); } catch (e) { bad(e.message); }
-for (const m of ["puppeteer-core", "three"]) fs.existsSync(path.join(ENGINE, "node_modules", m)) ? ok(m) : bad(m + " (rode o setup)");
+for (const m of ["puppeteer-core", "three"]) fs.existsSync(path.join(RUNTIME, "node_modules", m)) ? ok(m) : bad(m + " (rode o setup)");
 let C; try { C = loadConfig(); ok(`config: upscale=${C.upscale} · recorte=${C.segDevice} · whisper=${C.whisperDevice}`); } catch (e) { bad(e.message); }
 try {
   const py = pythonEnv(C || {});

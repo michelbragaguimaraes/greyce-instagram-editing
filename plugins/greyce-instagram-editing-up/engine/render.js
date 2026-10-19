@@ -6,14 +6,14 @@ const fs = require("fs");
 const path = require("path");
 const http = require("http");
 const { execFileSync } = require("child_process");
-const puppeteer = require("puppeteer-core");
-const { ENGINE, chromePath } = require("./lib/common");
+const { ENGINE, RUNTIME, chromePath, runtimeRequire } = require("./lib/common");
+const puppeteer = runtimeRequire("puppeteer-core");
 
 const args = process.argv.slice(2);
 const PROJ = path.resolve(args[0] && !args[0].startsWith("--") ? args.shift() : ".");
 const B = path.join(PROJ, "build");
 const T = JSON.parse(fs.readFileSync(path.join(B, "timeline.json"), "utf8"));
-const WEB = path.join(ENGINE, "web"), THREE = path.join(ENGINE, "node_modules", "three", "build");
+const WEB = path.join(ENGINE, "web"), THREE = path.join(RUNTIME, "node_modules", "three", "build");
 const MIME = { ".html": "text/html", ".js": "text/javascript", ".json": "application/json", ".css": "text/css", ".jpg": "image/jpeg", ".png": "image/png", ".woff2": "font/woff2" };
 
 function serve() {

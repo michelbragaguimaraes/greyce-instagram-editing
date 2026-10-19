@@ -6,12 +6,17 @@ const { execFileSync } = require("child_process");
 
 const ENGINE = path.resolve(__dirname, "..");
 const WIN = process.platform === "win32";
+// Ambiente pesado (node_modules, venv do Python, Real-ESRGAN) fica FORA do plugin, numa pasta fixa,
+// para sobreviver às atualizações do plugin: ~/.greyce-reel/<variante> (ou a variável GREYCE_REEL_HOME).
+const VARIANT = JSON.parse(fs.readFileSync(path.join(ENGINE, "config.json"), "utf8")).runtime || "cpu";
+const RUNTIME = process.env.GREYCE_REEL_HOME || path.join(os.homedir(), ".greyce-reel", VARIANT);
+const runtimeRequire = (m) => require(path.join(RUNTIME, "node_modules", m));
 
 function loadConfig(proj) {
   const base = JSON.parse(fs.readFileSync(path.join(ENGINE, "config.json"), "utf8"));
   const local = proj && fs.existsSync(path.join(proj, "config.json")) ? JSON.parse(fs.readFileSync(path.join(proj, "config.json"), "utf8")) : {};
   const c = { ...base, ...local };
-  c.esr = c.esr || path.join(ENGINE, "tools", "esr", WIN ? "realesrgan-ncnn-vulkan.exe" : "realesrgan-ncnn-vulkan");
+  c.esr = c.esr || path.join(RUNTIME, "esr", WIN ? "realesrgan-ncnn-vulkan.exe" : "realesrgan-ncnn-vulkan");
   if (c.upscale && !fs.existsSync(c.esr)) throw new Error("upscale ligado mas o Real-ESRGAN não está instalado em " + c.esr + " (rode o setup).");
   return c;
 }
@@ -33,7 +38,7 @@ function ff(args) {
 const probe = (f) => +execFileSync("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f]).toString();
 
 function pythonEnv(c) {
-  const venv = c.venv || path.join(ENGINE, "tools", "venv");
+  const venv = c.venv || path.join(RUNTIME, "venv");
   const python = WIN ? path.join(venv, "Scripts", "python.exe") : path.join(venv, "bin", "python");
   if (!fs.existsSync(python)) throw new Error("Python do motor não encontrado em " + python + " (rode o setup).");
   const env = {};
@@ -63,4 +68,4 @@ function chromePath() {
   return p;
 }
 
-module.exports = { ENGINE, WIN, loadConfig, ff, probe, pythonEnv, chromePath, isHDR };
+module.exports = { ENGINE, RUNTIME, WIN, loadConfig, ff, probe, pythonEnv, chromePath, isHDR, runtimeRequire };

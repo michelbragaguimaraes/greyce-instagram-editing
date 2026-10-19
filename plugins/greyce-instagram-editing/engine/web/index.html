@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Greyce · reel</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+  /* Identidade @agreycealves — medida nos carrosséis dela (ver references/brand.md) */
+  :root {
+    --navy: #093269; --ink: #0E2757; --paper: #FAFBFD; --sky: #D0E8FC;
+    --blue: #3666A8; --peach: #FDB498; --blush: #FCD9CB; --coral: #F3A589;
+    --title: "Fraunces", serif; --body: "Figtree", sans-serif; --hand: "Caveat", cursive;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--paper); }
+  #stage { position: absolute; inset: 0; overflow: hidden; background: var(--paper); }
+  /* camadas: cena → texto "atrás" → pessoas recortadas → 3D → bichinhos → textos/cards → vinheta */
+  #layers, #back, #front, #three, #fx, #ui, #grade { position: absolute; inset: 0; pointer-events: none; }
+  #layers { z-index: 0; } #back { z-index: 1; } #front { z-index: 2; } #three { z-index: 3; width: 1080px; height: 1920px; }
+  #fx { z-index: 4; } #ui { z-index: 5; } #grade { z-index: 6; }
+  .layer { position: absolute; inset: 0; overflow: hidden; }
+  .layer > img, .layer > canvas { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .media { filter: contrast(1.05) saturate(1.07) brightness(1.01); }
+  #grade { background: radial-gradient(ellipse 85% 75% at 50% 48%, transparent 60%, rgba(9,50,105,.22) 100%); }
+
+  .layer.polaroid { background: radial-gradient(520px 420px at 20% 18%, rgba(208,232,252,.95), transparent 70%),
+                                radial-gradient(560px 460px at 85% 80%, rgba(252,217,203,.9), transparent 70%), var(--paper); }
+  .layer.polaroid > img { inset: auto; left: 90px; top: 300px; width: 900px; height: 600px; object-fit: cover; border: 22px solid #fff;
+    border-bottom-width: 90px; box-shadow: 0 20px 50px rgba(9,50,105,.25); transform-origin: 50% 50%; }
+  .layer.polaroid .pcap { position: absolute; left: 0; width: 1080px; top: 1018px; text-align: center; font-family: var(--hand); font-size: 36px; color: var(--blue); }
+  .layer.grid { background: var(--paper); }
+  .layer.grid .tile { position: absolute; width: 516px; height: 700px; border-radius: 34px; overflow: hidden; box-shadow: 0 14px 34px rgba(9,50,105,.22); }
+  .layer.grid .tile img { width: 100%; height: 100%; object-fit: cover; }
+  .layer.grid .tile .lbl { position: absolute; left: 22px; top: 20px; font-family: var(--hand); font-weight: 700; font-size: 58px; color: var(--navy);
+    background: var(--blush); padding: 0 20px 6px; border-radius: 12px; transform: rotate(-3deg); }
+
+  .ov { position: absolute; transform-origin: 50% 50%; }
+  .big { left: 0; width: 1080px; text-align: center; font-family: var(--title); font-weight: 900; color: var(--paper);
+    letter-spacing: -0.035em; line-height: .86; font-variation-settings: "opsz" 144, "SOFT" 100; white-space: nowrap;
+    text-shadow: 0 8px 0 rgba(9,50,105,.95), 0 18px 40px rgba(9,50,105,.45); }
+  .big.navy { color: var(--navy); text-shadow: 0 6px 0 var(--paper), 0 16px 36px rgba(9,50,105,.35); }
+  .big em { font-style: normal; color: var(--coral); }
+  .slab { background: var(--paper); color: var(--navy); border-radius: 30px; box-shadow: 0 14px 40px rgba(9,50,105,.22);
+    padding: 20px 40px 26px; font-family: var(--title); font-weight: 900; letter-spacing: -0.02em; line-height: .98;
+    font-variation-settings: "opsz" 144, "SOFT" 100; }
+  .slab u, .card u, .big u { text-decoration: none; background: linear-gradient(transparent 66%, var(--peach) 66%, var(--peach) 88%, transparent 88%); }
+  .slab .h, .card .h { font-family: var(--hand); font-weight: 700; letter-spacing: 0; }
+  .note { font-family: var(--hand); font-weight: 700; color: var(--navy); background: var(--blush);
+    padding: 2px 26px 8px; border-radius: 14px; white-space: nowrap; box-shadow: 0 8px 22px rgba(9,50,105,.15); }
+  .hand { font-family: var(--hand); font-weight: 700; color: var(--paper); white-space: nowrap;
+    text-shadow: 0 3px 0 rgba(9,50,105,.9), 0 8px 24px rgba(9,50,105,.5); }
+  .emoji { font-family: "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji"; font-weight: 400; text-shadow: none; }
+
+  .card { background: var(--paper); border-radius: 30px; box-shadow: 0 16px 44px rgba(9,50,105,.24);
+    padding: 26px 40px 28px; color: var(--ink); font-family: var(--body); transform-origin: 50% 0%; }
+  .card .head { font-family: var(--hand); font-weight: 700; font-size: 52px; color: var(--navy); background: var(--blush);
+    display: inline-block; padding: 0 22px 6px; border-radius: 12px; transform: rotate(-2deg); margin-bottom: 8px; }
+  .card .row { display: flex; align-items: center; justify-content: space-between; gap: 18px; font-size: 42px; font-weight: 700;
+    padding: 8px 0; border-bottom: 4px dotted rgba(9,50,105,.22); }
+  .card .row:last-child { border-bottom: 0; }
+  .card .row b { font-family: var(--title); font-weight: 900; color: var(--navy); font-size: 74px; line-height: .9; white-space: nowrap;
+    background: linear-gradient(transparent 60%, var(--peach) 60%, var(--peach) 88%, transparent 88%); display: inline-block; }
+  .card .row b.sm { font-size: 54px; }
+  .card .row small { display: block; font-size: 32px; font-weight: 500; color: var(--blue); }
+  .tick { display: inline-flex; width: 54px; height: 54px; border-radius: 50%; background: var(--sky); border: 5px solid var(--navy);
+    align-items: center; justify-content: center; font-size: 30px; color: var(--navy); font-weight: 900; margin-right: 16px; flex: none; }
+  .row .l { display: flex; align-items: center; }
+  .card.chips { padding: 12px 20px; }
+  .card.chips .wrap { display: flex; justify-content: center; gap: 0 22px; flex-wrap: wrap; }
+  .card.chips .row { border: 0; font-size: 36px; white-space: nowrap; }
+  .card.chips .tick { width: 46px; height: 46px; font-size: 26px; margin-right: 10px; }
+
+  .badge { width: 300px; height: 300px; border-radius: 50%; background: var(--navy); color: var(--paper);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 14px 34px rgba(9,50,105,.35); border: 10px solid var(--paper); }
+  .badge b { font-family: var(--title); font-weight: 900; font-size: 120px; line-height: .85; }
+  .badge span { font-family: var(--hand); font-size: 50px; font-weight: 700; color: var(--peach); line-height: .9; }
+
+  .cap { position: absolute; left: 60px; width: 960px; top: 1250px; display: flex; justify-content: center; }
+  .cap .box { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 18px; max-width: 900px; padding: 18px 34px 24px;
+    background: rgba(250,251,253,.95); border-radius: 28px; box-shadow: 0 12px 34px rgba(9,50,105,.2);
+    font-family: var(--body); font-weight: 800; font-size: 62px; line-height: 1.12; color: var(--ink); transform-origin: 50% 100%; }
+  .cap span { display: inline-block; border-radius: 10px; padding: 0 4px; }
+  .cap span.hl { color: var(--navy); font-family: var(--title); font-weight: 900; font-variation-settings: "opsz" 144, "SOFT" 100; }
+  .cap span.on { background: var(--peach); }
+
+  .btn { width: 580px; height: 112px; border-radius: 60px; background: var(--navy); color: var(--paper);
+    font-family: var(--body); font-weight: 800; font-size: 50px; display: flex; align-items: center; justify-content: center; gap: 14px;
+    box-shadow: 0 10px 0 #061f42, 0 18px 34px rgba(9,50,105,.3); }
+  .btn.on { background: var(--peach); color: var(--navy); box-shadow: 0 4px 0 #e2916f, 0 10px 24px rgba(9,50,105,.25); }
+  .maplbl { font-family: var(--hand); font-weight: 700; font-size: 56px; color: var(--navy); background: var(--blush);
+    padding: 0 18px 6px; border-radius: 12px; white-space: nowrap; box-shadow: 0 8px 22px rgba(9,50,105,.15); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="layers"></div>
+  <div id="back"></div>
+  <div id="front"></div>
+  <canvas id="three" width="1080" height="1920"></canvas>
+  <svg id="fx" viewBox="0 0 1080 1920" width="1080" height="1920"></svg>
+  <div id="ui"></div>
+  <div id="grade"></div>
+</div>
+<script type="importmap">{ "imports": { "three": "./three/three.module.js" } }</script>
+<script type="module" src="js/engine.js"></script>
+</body>
+</html>

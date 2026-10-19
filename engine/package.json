@@ -1,6 +1,0 @@
-{
-  "name": "greyce-reel-engine",
-  "private": true,
-  "description": "Motor de edição de reels no estilo @agreycealves (HTML/CSS/JS/Three.js renderizado quadro a quadro no Chrome headless).",
-  "dependencies": { "puppeteer-core": "^24.0.0", "three": "^0.180.0" }
-}

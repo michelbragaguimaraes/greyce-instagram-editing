@@ -1,0 +1,20 @@
+{
+  "name": "greyce-instagram-editing-up",
+  "displayName": "Greyce · edição de reels (GPU + upscale)",
+  "version": "1.0.0",
+  "description": "Edição de reels de Instagram no estilo @agreycealves, só com código (HTML/CSS/JS + Three.js + SVG via Puppeteer), ciente do conteúdo. Versão com GPU NVIDIA e upscale com IA (Real-ESRGAN).",
+  "author": {
+    "name": "Michel Braga Guimarães",
+    "url": "https://github.com/michelbragaguimaraes"
+  },
+  "homepage": "https://github.com/michelbragaguimaraes/greyce-instagram-editing",
+  "repository": "https://github.com/michelbragaguimaraes/greyce-instagram-editing",
+  "license": "MIT",
+  "keywords": [
+    "instagram",
+    "reels",
+    "video",
+    "threejs",
+    "puppeteer"
+  ]
+}

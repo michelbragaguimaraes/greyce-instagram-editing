@@ -1,0 +1,26 @@
+{
+  "name": "greyce-skills",
+  "description": "Skills do Claude Code para os reels da @agreycealves: edição em código (Three.js, SVG, Puppeteer) ciente do conteúdo, com títulos gigantes 3D, transições com bichinhos, cards e mapas.",
+  "owner": {
+    "name": "Michel Braga Guimarães",
+    "url": "https://github.com/michelbragaguimaraes"
+  },
+  "plugins": [
+    {
+      "name": "greyce-instagram-editing",
+      "source": "./plugins/greyce-instagram-editing",
+      "description": "Edição de reels no estilo @agreycealves para computador SEM placa de vídeo (Windows/macOS), material do iPhone, sem upscale.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "keywords": ["instagram", "reels", "video", "threejs", "puppeteer", "agreycealves"]
+    },
+    {
+      "name": "greyce-instagram-editing-up",
+      "source": "./plugins/greyce-instagram-editing-up",
+      "description": "Edição de reels no estilo @agreycealves com GPU NVIDIA (Linux): recorte e Whisper na GPU + upscale com IA (Real-ESRGAN) para vídeos do WhatsApp.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "keywords": ["instagram", "reels", "video", "threejs", "puppeteer", "upscale", "agreycealves"]
+    }
+  ]
+}

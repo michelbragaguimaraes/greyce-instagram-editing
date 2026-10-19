@@ -7,26 +7,27 @@ description: Edita reels de Instagram da Greyce (@agreycealves) no estilo dela, 
 
 Você é o motion designer da @agreycealves. O resultado tem de parecer de agência e **ter a cara dela**.
 Leia antes de começar: `references/brief.md` (o pedido), `references/brand.md` (marca),
-`references/lessons.md` (erros que já cometemos). Durante o roteiro: `references/roteiro.md` e
+`references/lessons.md` (erros que já cometemos). Os arquivos de referência ficam ao lado deste SKILL.md. Durante o roteiro: `references/roteiro.md` e
 `references/effects.md`. Exemplo completo aprovado: `templates/ep2-zoo.roteiro.json`.
 
-`ENGINE` = a pasta `engine\` desta skill (`%USERPROFILE%\.claude\skills\greyce-instagram-editing\engine`).
-`PY` = `ENGINE\tools\venv\Scripts\python.exe`.
+`ENGINE` = `${CLAUDE_PLUGIN_ROOT}/engine` (o motor que vem com este plugin). O ambiente pesado (Node deps,
+Python, modelos) fica em `%USERPROFILE%\.greyce-reel\cpu` e sobrevive às atualizações do plugin.
 Restrição inegociável: nada de editor de vídeo nem Remotion/HyperFrames. ffmpeg, Whisper e recorte só
 como utilitários. **Sem upscale** aqui: as fotos e vídeos do iPhone já têm qualidade (o motor converte
 HDR e HEIC sozinho). Se vier material ruim (WhatsApp, print), avise e evite zoom > 1,1 nele.
 
 ## 0. Ambiente (uma vez)
 ```powershell
-powershell -ExecutionPolicy Bypass -File ENGINE\setup.ps1
-node ENGINE\tools\doctor.js
+powershell -ExecutionPolicy Bypass -File "ENGINE/setup.ps1"
+node "ENGINE/tools/doctor.js"
 ```
+Se o `doctor` acusar algo faltando, rode o setup de novo (macOS/Linux: `bash ENGINE/setup.sh`).
 
 ## 1. Projeto e inventário
 Crie uma pasta de projeto ao lado dos brutos (ex.: `Documentos\Instagram\Zoologico\reel_ep3\`).
 ```powershell
 node ENGINE\tools\inventory.js <brutos> <projeto>
-PY ENGINE\tools\transcribe.py <brutos> <projeto>\analise\transcricao.json --flat --device cpu
+node ENGINE\tools\py.js transcribe <brutos> <projeto>\analise\transcricao.json --flat --device cpu
 ```
 A transcrição na CPU usa o modelo `medium` (≈ 1–2× o tempo do áudio). **Olhe** todas as folhas
 (`analise\videos_*.jpg`, `fotos_*.jpg`) e leia toda a transcrição. Use as fotos retocadas se existirem.
@@ -71,7 +72,7 @@ node ENGINE\render.js <projeto> --audio    # se mudar só o áudio/efeitos
 ```
 Confira: 1080×1920, 30 fps, H.264 + AAC, ≈ −14 LUFS
 (`ffmpeg -i saida\X.mp4 -af loudnorm=print_format=summary -f null -`) e **transcreva o MP4 final**
-(`PY ENGINE\tools\transcribe.py <projeto>\saida <projeto>\analise\conferencia.json --flat --device cpu`):
+(`node ENGINE\tools\py.js transcribe <projeto>\saida <projeto>\analise\conferencia.json --flat --device cpu`):
 toda frase da narração tem que aparecer.
 
 ## 6. Entrega

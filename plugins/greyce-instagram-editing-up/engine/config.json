@@ -1,0 +1,7 @@
+{
+  "runtime": "gpu",
+  "upscale": true,
+  "segDevice": "cuda",
+  "whisperDevice": "cuda",
+  "maxMaskFramesCPU": 120
+}
