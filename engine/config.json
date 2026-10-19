@@ -1,0 +1,6 @@
+{
+  "upscale": false,
+  "segDevice": "cpu",
+  "whisperDevice": "cpu",
+  "maxMaskFramesCPU": 120
+}

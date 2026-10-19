@@ -1,0 +1,1013 @@
+{
+ "output": "EP2_San_Diego_Zoo",
+ "root": "..",
+ "fps": 30,
+ "tempo": 1.07,
+ "pauseMax": 0.16,
+ "breath": 0.06,
+ "lead": 0.12,
+ "blockGap": 0.2,
+ "tail": 1.6,
+ "music": {
+  "bpm": 120,
+  "energy": 0.6,
+  "gain": 0.32
+ },
+ "blocks": [
+  {
+   "id": "B1",
+   "audio": "Zoo audio 1.m4a"
+  },
+  {
+   "id": "B2",
+   "audio": "Zoo audio 4.m4a"
+  },
+  {
+   "id": "B3",
+   "audio": "Zoo audio 5.m4a",
+   "gap": 0.08
+  },
+  {
+   "id": "B4",
+   "audio": "Zoo audio 6.m4a",
+   "to": 20
+  },
+  {
+   "id": "B5",
+   "audio": "Zoo audio  2 - 2.m4a",
+   "gapAfter": 2.1
+  },
+  {
+   "id": "B6",
+   "audio": "Zoo audio 3 - 2.m4a"
+  },
+  {
+   "id": "B7",
+   "audio": "Zoo audio  6 - 2.m4a"
+  },
+  {
+   "id": "B8",
+   "audio": "Zoo audio 7 - 2.m4a"
+  },
+  {
+   "id": "B9",
+   "audio": "Zoo audio 9.m4a"
+  },
+  {
+   "id": "B10",
+   "audio": "Zoo audio13.m4a"
+  }
+ ],
+ "src": {
+  "V1": "WhatsApp Video 2026-10-13 at 2.20.22 PM (1).mp4",
+  "V2": "WhatsApp Video 2026-10-13 at 2.20.22 PM.mp4",
+  "V3": "WhatsApp Video 2026-10-13 at 2.20.23 PM (1).mp4",
+  "V5": "WhatsApp Video 2026-10-13 at 2.20.23 PM (3).mp4",
+  "V6": "WhatsApp Video 2026-10-13 at 2.20.23 PM.mp4",
+  "V8": "WhatsApp Video 2026-10-13 at 2.24.21 PM.mp4",
+  "V10": "WhatsApp Video 2026-10-13 at 2.24.27 PM (1).mp4",
+  "V13": "WhatsApp Video 2026-10-13 at 2.24.27 PM.mp4",
+  "V14": "WhatsApp Video 2026-10-13 at 2.27.09 PM (1).mp4",
+  "V15": "WhatsApp Video 2026-10-13 at 2.27.09 PM (2).mp4",
+  "V18": "WhatsApp Video 2026-10-13 at 2.27.10 PM (2).mp4",
+  "V19": "WhatsApp Video 2026-10-13 at 2.27.10 PM (3).mp4",
+  "V20": "WhatsApp Video 2026-10-13 at 2.27.10 PM.mp4",
+  "V21": "WhatsApp Video 2026-10-13 at 2.34.36 PM.mp4",
+  "V22": "WhatsApp Video 2026-10-13 at 2.34.37 PM (1).mp4",
+  "V24": "WhatsApp Video 2026-10-13 at 2.34.37 PM.mp4",
+  "V25": "WhatsApp Video 2026-10-14 at 5.39.47 PM (1).mp4",
+  "V26": "WhatsApp Video 2026-10-14 at 5.39.47 PM (2).mp4",
+  "V27": "WhatsApp Video 2026-10-14 at 5.39.47 PM.mp4",
+  "F1": "WhatsApp Image 2026-10-13 at 2.18.35 PM (1).jpeg",
+  "F2": "WhatsApp Image 2026-10-13 at 2.18.35 PM (2).jpeg",
+  "F3": "WhatsApp Image 2026-10-13 at 2.18.35 PM (3).jpeg",
+  "F5": "WhatsApp Image 2026-10-13 at 2.18.35 PM (5).jpeg",
+  "F7": "WhatsApp Image 2026-10-13 at 2.18.35 PM (7).jpeg",
+  "F13": "WhatsApp Image 2026-10-13 at 2.18.36 PM (3).jpeg",
+  "F15": "WhatsApp Image 2026-10-13 at 2.18.36 PM (5).jpeg",
+  "F41": "WhatsApp Image 2026-10-13 at 2.24.16 PM (4).jpeg",
+  "F56": "WhatsApp Image 2026-10-13 at 2.34.29 PM.jpeg",
+  "F57": "WhatsApp Image 2026-10-13 at 2.34.34 PM (1).jpeg",
+  "F85": "WhatsApp Image 2026-10-14 at 5.39.47 PM (9).jpeg",
+  "F89": "Play Areas Greyce.png",
+  "F69": "WhatsApp Image 2026-10-14 at 5.39.40 PM.jpeg",
+  "F36": "WhatsApp Image 2026-10-13 at 2.24.15 PM (1).jpeg",
+  "V17": "WhatsApp Video 2026-10-13 at 2.27.10 PM (1).mp4",
+  "F25": "WhatsApp Image 2026-10-13 at 2.20.18 PM.jpeg",
+  "F14e": "fotos_editadas/WhatsApp Image 2026-10-13 at 2.18.36 PM (4).jpeg",
+  "F42e": "fotos_editadas/WhatsApp Image 2026-10-13 at 2.24.16 PM (5).jpeg",
+  "F12e": "fotos_editadas/WhatsApp Image 2026-10-13 at 2.18.36 PM (2).jpeg"
+ },
+ "scenes": [
+  {
+   "id": "s01",
+   "at": "B1:0",
+   "src": "V19",
+   "from": 0.0,
+   "zoom": [
+    1.0,
+    1.1
+   ],
+   "focus": [
+    0.42,
+    0.4
+   ],
+   "mask": "portrait"
+  },
+  {
+   "id": "s02",
+   "at": "B2:0",
+   "src": "F25",
+   "photo": true,
+   "zoom": [
+    1.0,
+    1.06
+   ],
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "mask": "portrait",
+   "trans": "zoomblur",
+   "D": 0.7
+  },
+  {
+   "id": "s03",
+   "at": "B2:16",
+   "src": "V14",
+   "from": 7.0,
+   "zoom": [
+    1.0,
+    1.06
+   ],
+   "focus": [
+    0.45,
+    0.45
+   ],
+   "cut": "pop"
+  },
+  {
+   "id": "s03b",
+   "at": "B2:24",
+   "src": "V25",
+   "from": 0.4,
+   "zoom": [
+    1.0,
+    1.06
+   ],
+   "focus": [
+    0.45,
+    0.45
+   ],
+   "cut": "pop"
+  },
+  {
+   "id": "s04",
+   "at": "B3:0",
+   "src": "F14e",
+   "photo": true,
+   "zoom": [
+    1.15,
+    1.2
+   ],
+   "focus": [
+    0.5,
+    0.8
+   ],
+   "mask": "portrait",
+   "trans": "footprints",
+   "D": 1.0
+  },
+  {
+   "id": "s05",
+   "at": "B3:4",
+   "src": "V2",
+   "from": 14.6,
+   "zoom": [
+    1.0,
+    1.06
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "cut": "pop"
+  },
+  {
+   "id": "s06",
+   "at": "B4:0",
+   "src": "V13",
+   "from": 64.9,
+   "zoom": [
+    1.0,
+    1.1
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "trans": "zoomblur",
+   "D": 0.7
+  },
+  {
+   "id": "s07",
+   "at": "B4:7",
+   "grid": [
+    {
+     "src": "V1",
+     "from": 2.2,
+     "label": "suricato"
+    },
+    {
+     "src": "V21",
+     "from": 1.8,
+     "label": "flamingos"
+    },
+    {
+     "src": "V27",
+     "from": 2.2,
+     "label": "cascavel"
+    },
+    {
+     "src": "V26",
+     "from": 3.0,
+     "label": "ursos"
+    }
+   ],
+   "zoom": [
+    1,
+    1
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "trans": "grid",
+   "D": 0.6
+  },
+  {
+   "id": "s08",
+   "at": "B4:11",
+   "src": "F5",
+   "photo": true,
+   "zoom": [
+    1.0,
+    1.08
+   ],
+   "focus": [
+    0.5,
+    0.62
+   ],
+   "cut": "pop"
+  },
+  {
+   "id": "s09",
+   "at": "B5:0",
+   "src": "V6",
+   "from": 9.4,
+   "zoom": [
+    1.0,
+    1.06
+   ],
+   "focus": [
+    0.55,
+    0.5
+   ],
+   "mask": "portrait",
+   "trans": "trunk",
+   "D": 1.0
+  },
+  {
+   "id": "s10",
+   "at": "B5:end+0.15",
+   "src": "V3",
+   "from": 12.45,
+   "zoom": [
+    1.0,
+    1.05
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "cut": "pop"
+  },
+  {
+   "id": "s11",
+   "at": "B6:0",
+   "src": "V15",
+   "from": 6.0,
+   "zoom": [
+    1.0,
+    1.06
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "trans": "splash",
+   "D": 1.1
+  },
+  {
+   "id": "s12",
+   "at": "B6:7",
+   "src": "F89",
+   "photo": true,
+   "polaroid": "foto: sandiegozoo.org",
+   "zoom": [
+    1.0,
+    1.04
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "cut": "pop"
+  },
+  {
+   "id": "s13",
+   "at": "B6:19",
+   "src": "V17",
+   "from": 10.3,
+   "zoom": [
+    1.0,
+    1.06
+   ],
+   "focus": [
+    0.5,
+    0.7
+   ],
+   "cut": "pop"
+  },
+  {
+   "id": "s14",
+   "at": "B7:0",
+   "src": "F42e",
+   "photo": true,
+   "zoom": [
+    1.0,
+    1.06
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "mask": "portrait",
+   "trans": "cable",
+   "D": 1.1
+  },
+  {
+   "id": "s15",
+   "at": "B7:12",
+   "src": "V10",
+   "from": 10.0,
+   "zoom": [
+    1.0,
+    1.06
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "cut": "pop"
+  },
+  {
+   "id": "s16",
+   "at": "B7:18",
+   "src": "V24",
+   "from": 1.0,
+   "zoom": [
+    1.04,
+    1.1
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "cut": "pop"
+  },
+  {
+   "id": "s17",
+   "at": "B7:27",
+   "src": "V8",
+   "from": 2.0,
+   "zoom": [
+    1.1,
+    1.16
+   ],
+   "focus": [
+    0.5,
+    0.6
+   ],
+   "cut": "pop"
+  },
+  {
+   "id": "s18",
+   "at": "B8:0",
+   "src": "V5",
+   "from": 1.4,
+   "zoom": [
+    1.0,
+    1.06
+   ],
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "trans": "whip",
+   "D": 0.6
+  },
+  {
+   "id": "s19",
+   "at": "B8:8",
+   "src": "F56",
+   "photo": true,
+   "zoom": [
+    1.0,
+    1.1
+   ],
+   "focus": [
+    0.62,
+    0.35
+   ],
+   "cut": "pop"
+  },
+  {
+   "id": "s20",
+   "at": "B9:0",
+   "src": "V18",
+   "from": 0.4,
+   "zoom": [
+    1.0,
+    1.08
+   ],
+   "focus": [
+    0.62,
+    0.45
+   ],
+   "trans": "turtle",
+   "D": 1.4
+  },
+  {
+   "id": "s21",
+   "at": "B9:8",
+   "src": "F69",
+   "photo": true,
+   "zoom": [
+    1.0,
+    1.08
+   ],
+   "focus": [
+    0.5,
+    0.7
+   ],
+   "cut": "pop"
+  },
+  {
+   "id": "s22",
+   "at": "B9:17",
+   "src": "V2",
+   "from": 15.1,
+   "zoom": [
+    1.0,
+    1.06
+   ],
+   "focus": [
+    0.5,
+    0.7
+   ],
+   "cut": "pop"
+  },
+  {
+   "id": "s23",
+   "at": "B9:31",
+   "src": "V20",
+   "from": 14.0,
+   "zoom": [
+    1.0,
+    1.06
+   ],
+   "focus": [
+    0.5,
+    0.6
+   ],
+   "cut": "pop"
+  },
+  {
+   "id": "s24",
+   "at": "B10:0",
+   "src": "F36",
+   "photo": true,
+   "zoom": [
+    1.08,
+    1.0
+   ],
+   "focus": [
+    0.5,
+    0.7
+   ],
+   "trans": "slide",
+   "D": 0.8
+  },
+  {
+   "id": "s25",
+   "at": "B10:17",
+   "src": "F12e",
+   "photo": true,
+   "zoom": [
+    1.0,
+    1.07
+   ],
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "mask": "portrait",
+   "trans": "heart",
+   "D": 0.6
+  }
+ ],
+ "ambient": [
+  {
+   "src": "V3",
+   "from": 12.45,
+   "dur": 1.75,
+   "at": "B5:end+0.15",
+   "gain": 1.0,
+   "caption": true
+  }
+ ],
+ "captions": {
+  "top": 1250,
+  "keywords": [
+   "Califórnia",
+   "corre",
+   "fim",
+   "mês",
+   "episódio",
+   "2",
+   "Liam",
+   "Zoo",
+   "650",
+   "visitados",
+   "elefantes",
+   "crianças",
+   "cachoeirinha",
+   "banho",
+   "78",
+   "bondinho",
+   "ônibus",
+   "35",
+   "carrinho",
+   "subida",
+   "16",
+   "outubro",
+   "11",
+   "6",
+   "nunca",
+   "3",
+   "31",
+   "Beijo"
+  ],
+  "replace": {
+   "Lia": "Liam"
+  },
+  "hide": [
+   [
+    "B1:start",
+    "B1:end+0.1"
+   ],
+   [
+    "B10:start-0.05",
+    "end+5"
+   ]
+  ]
+ },
+ "sfx": [
+  {
+   "at": "B3:1",
+   "kind": "thump"
+  },
+  {
+   "at": "B9:end+0.1",
+   "kind": "ding"
+  }
+ ],
+ "overlays": [
+  {
+   "type": "hand",
+   "html": "mora na",
+   "top": 95,
+   "left": 0,
+   "width": 1080,
+   "align": "center",
+   "size": 96,
+   "at": 0,
+   "until": "B1:5",
+   "rot": -3
+  },
+  {
+   "type": "big",
+   "html": "CALIFÓRNIA",
+   "size": 162,
+   "top": 215,
+   "at": 0,
+   "until": "B1:5"
+  },
+  {
+   "type": "big",
+   "html": "FILHO<br><em>PEQUENO?</em>",
+   "size": 150,
+   "top": 150,
+   "at": "B1:5-0.05",
+   "until": "B1:9"
+  },
+  {
+   "type": "big",
+   "html": "CORRE!",
+   "size": 250,
+   "top": 150,
+   "at": "B1:9-0.05",
+   "until": "B1:10",
+   "rot": -4
+  },
+  {
+   "type": "big",
+   "html": "ACABA NO<br><em>FIM DO MÊS</em>",
+   "size": 140,
+   "top": 160,
+   "at": "B1:10-0.05",
+   "until": "B1:end+0.35"
+  },
+  {
+   "type": "hand",
+   "html": "⏰",
+   "size": 130,
+   "left": 880,
+   "top": 60,
+   "at": "B1:10",
+   "until": "B1:end+0.35",
+   "wobble": 12
+  },
+  {
+   "type": "big",
+   "html": "EP.2",
+   "size": 380,
+   "top": 110,
+   "at": "s02.in+0.7",
+   "until": "B2:16"
+  },
+  {
+   "type": "note",
+   "html": "série: passeios com criança 📍 San Diego",
+   "size": 60,
+   "left": 140,
+   "top": 1110,
+   "at": "B2:7",
+   "until": "B2:16",
+   "rot": -2
+  },
+  {
+   "type": "note",
+   "html": "Liam, 1 aninho 💙",
+   "size": 72,
+   "left": 430,
+   "top": 300,
+   "at": "s03.in+0.25",
+   "until": "s03b.in",
+   "rot": -4
+  },
+  {
+   "type": "arrow",
+   "x": 440,
+   "y": 400,
+   "rot": -10,
+   "at": "s03.in+0.15",
+   "until": "s03b.in"
+  },
+  {
+   "type": "big",
+   "html": "ZOO",
+   "size": 540,
+   "top": 330,
+   "at": "s04.in+0.5",
+   "until": "B3:4"
+  },
+  {
+   "type": "doodle",
+   "kind": "spark",
+   "x": 130,
+   "y": 700,
+   "at": "B3:1",
+   "until": "B3:4"
+  },
+  {
+   "type": "note",
+   "html": "eu te conto já já… 🤫",
+   "size": 80,
+   "left": 230,
+   "top": 300,
+   "at": "B3:5",
+   "until": "B3:end+0.3",
+   "rot": -3
+  },
+  {
+   "type": "slab",
+   "html": "<u>enorme</u>!",
+   "size": 150,
+   "left": 240,
+   "top": 330,
+   "at": "B4:3",
+   "until": "B4:7",
+   "rot": -4
+  },
+  {
+   "type": "counter",
+   "to": 650,
+   "label": "espécies",
+   "left": 390,
+   "top": 810,
+   "at": "B4:7+0.2",
+   "until": "B4:11+0.25",
+   "dur": 1.2,
+   "rot": -6,
+   "wobble": 3
+  },
+  {
+   "type": "slab",
+   "html": "um dos zoos <u>mais visitados</u><br>dos EUA 🇺🇸",
+   "size": 72,
+   "left": 90,
+   "top": 280,
+   "width": 900,
+   "align": "center",
+   "at": "B4:13",
+   "until": "B4:end+0.3",
+   "rot": -1.5
+  },
+  {
+   "type": "note",
+   "html": "o favorito dele 🐘💙",
+   "size": 80,
+   "left": 220,
+   "top": 290,
+   "at": "B5:3",
+   "until": "B5:8",
+   "rot": -3
+  },
+  {
+   "type": "doodle",
+   "kind": "heart",
+   "x": 940,
+   "y": 280,
+   "at": "B5:3",
+   "until": "B5:end+0.2"
+  },
+  {
+   "type": "big",
+   "layer": "front",
+   "html": "ELEFANTES",
+   "size": 170,
+   "top": 190,
+   "at": "B5:8-0.1",
+   "until": "B5:end+0.1"
+  },
+  {
+   "type": "slab",
+   "html": "Área só pras <u>crianças</u> 💦",
+   "size": 92,
+   "left": 90,
+   "top": 260,
+   "width": 900,
+   "align": "center",
+   "at": "B6:2",
+   "until": "B6:7",
+   "rot": -1.5
+  },
+  {
+   "type": "card",
+   "chips": true,
+   "top": 1085,
+   "left": 60,
+   "width": 960,
+   "at": "B6:8",
+   "until": "B6:19",
+   "rot": 1,
+   "rows": [
+    {
+     "html": "<span class=\"l\"><span class=\"tick\">✓</span>cachoeirinha</span>",
+     "at": "B6:8"
+    },
+    {
+     "html": "<span class=\"l\"><span class=\"tick\">✓</span>jatos d'água</span>",
+     "at": "B6:9"
+    },
+    {
+     "html": "<span class=\"l\"><span class=\"tick\">✓</span>riachinho</span>",
+     "at": "B6:13"
+    }
+   ]
+  },
+  {
+   "type": "card",
+   "head": "leva na bolsa 👜",
+   "top": 260,
+   "left": 90,
+   "width": 900,
+   "at": "B6:19",
+   "until": "B6:end+0.3",
+   "rot": -1,
+   "rows": [
+    {
+     "html": "<span class=\"l\"><span class=\"tick\">✓</span>roupa de banho 🩱</span>",
+     "at": "B6:21"
+    },
+    {
+     "html": "<span class=\"l\"><span class=\"tick\">✓</span>muda de roupa 👕</span>",
+     "at": "B6:25"
+    }
+   ]
+  },
+  {
+   "type": "big",
+   "color": "navy",
+   "html": "$78",
+   "size": 380,
+   "top": 110,
+   "at": "B7:5-0.1",
+   "until": "s15.in"
+  },
+  {
+   "type": "card",
+   "head": "ingresso adulto 🎟️",
+   "top": 820,
+   "left": 90,
+   "width": 900,
+   "at": "B7:9",
+   "until": "B7:end+0.25",
+   "rot": -1,
+   "rows": [
+    {
+     "html": "por pessoa <b>$78</b>",
+     "at": "B7:9"
+    },
+    {
+     "html": "<span class=\"l\"><span class=\"tick\">✓</span>bondinho incluso</span>",
+     "at": "B7:11"
+    },
+    {
+     "html": "<span class=\"l\"><span class=\"tick\">✓</span><span>tour de ônibus com guia<small>uns 35 minutos</small></span></span>",
+     "at": "B7:20"
+    }
+   ]
+  },
+  {
+   "type": "note",
+   "html": "leva carrinho! 👶 subida atrás de subida",
+   "size": 66,
+   "left": 90,
+   "top": 300,
+   "at": "B8:0",
+   "until": "B8:9",
+   "rot": -3
+  },
+  {
+   "type": "card",
+   "head": "estacionamento 🚗",
+   "top": 240,
+   "left": 190,
+   "width": 700,
+   "at": "B8:10",
+   "until": "B8:end+0.25",
+   "rot": 1,
+   "rows": [
+    {
+     "html": "por dia <b>$16</b>",
+     "at": "B8:12"
+    },
+    {
+     "html": "<span style=\"font-size:38px;font-weight:600\">pago desde janeiro</span>",
+     "at": "B8:16"
+    }
+   ]
+  },
+  {
+   "type": "slab",
+   "html": "O que acaba<br>no <u>fim do mês</u>? ⏳",
+   "size": 110,
+   "left": 90,
+   "top": 280,
+   "width": 900,
+   "align": "center",
+   "at": "B9:0",
+   "until": "B9:8",
+   "rot": -1.5
+  },
+  {
+   "type": "card",
+   "head": "só em outubro ✨",
+   "top": 200,
+   "left": 90,
+   "width": 900,
+   "at": "B9:8",
+   "until": "B9:end+0.35",
+   "rot": -1,
+   "rows": [
+    {
+     "html": "<span>Criança até 11 anos</span> <b>$0</b>",
+     "at": "B9:15"
+    },
+    {
+     "html": "<span>até 6 por adulto<small>e nem precisa de ingresso</small></span> <b class=\"sm\">👧👦</b>",
+     "at": "B9:17"
+    },
+    {
+     "html": "<span>Bebê até 2 anos<small>o ano todo</small></span> <b class=\"sm\">sempre $0</b>",
+     "at": "B9:32"
+    }
+   ]
+  },
+  {
+   "type": "slab",
+   "html": "Me segue pro<br><u>episódio 3</u> 👉",
+   "size": 104,
+   "left": 90,
+   "top": 230,
+   "width": 900,
+   "align": "center",
+   "at": "B10:0",
+   "until": "s25.in+0.2",
+   "rot": -1.5
+  },
+  {
+   "type": "follow",
+   "handle": "@agreycealves",
+   "left": 70,
+   "top": 540,
+   "at": "B10:0+0.4",
+   "until": "s25.in+0.2",
+   "press": "B10:3+0.25",
+   "eleX": 900,
+   "eleY": 660
+  },
+  {
+   "type": "note",
+   "html": "corre! ⏰ só até 31/10",
+   "size": 80,
+   "left": 120,
+   "top": 710,
+   "at": "B10:10",
+   "until": "s25.in+0.2",
+   "rot": -3
+  },
+  {
+   "type": "doodle",
+   "kind": "spark",
+   "x": 90,
+   "y": 270,
+   "at": "B10:0+0.5",
+   "until": "s25.in"
+  },
+  {
+   "type": "doodle",
+   "kind": "heart",
+   "x": 960,
+   "y": 220,
+   "at": "B10:0+0.4",
+   "until": "s25.in"
+  },
+  {
+   "type": "big",
+   "html": "BEIJO!",
+   "size": 300,
+   "top": 420,
+   "at": "s25.in+0.1",
+   "until": "end+1",
+   "rot": -3
+  },
+  {
+   "type": "hearts",
+   "at": "s25.in",
+   "until": "end+1"
+  },
+  {
+   "type": "note",
+   "html": "@agreycealves 💙",
+   "size": 74,
+   "left": 270,
+   "top": 1330,
+   "at": "s25.in+0.5",
+   "until": "end+1",
+   "rot": -2
+  },
+  {
+   "type": "doodle",
+   "kind": "spark",
+   "x": 900,
+   "y": 1330,
+   "at": "B10:17",
+   "until": "end+1",
+   "scale": 1.4
+  }
+ ]
+}

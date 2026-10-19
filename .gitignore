@@ -1,0 +1,5 @@
+node_modules/
+engine/tools/venv/
+engine/tools/esr/
+__pycache__/
+*.pyc
